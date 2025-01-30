@@ -1,0 +1,10 @@
+---
+- name: Include prerequisites
+  include_tasks: prerequisites.yml
+
+- name: Configure /etc/hosts
+  include_tasks: configure_hosts.yml
+
+- name: Deploy the solution
+  include_tasks: deploy.yml
+

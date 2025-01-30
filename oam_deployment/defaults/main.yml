@@ -1,0 +1,8 @@
+---
+# defaults file for oam_deployment
+repo_url: "https://github.com/sknrao/iosmcn-oam.git"
+repo_dest: "/opt/iosmcn-oam"
+domain_name: virtual3.myguest.virtualbox.org
+python_packages:
+  - jproperties
+

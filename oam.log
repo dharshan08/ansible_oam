@@ -1,0 +1,61 @@
+
+PLAY [all] *********************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [node1]
+
+TASK [oam_deployment : Include prerequisites] **********************************
+included: /home/dharshan/ansible_oam/oam_deployment/tasks/prerequisites.yml for node1
+
+TASK [oam_deployment : Update package cache] ***********************************
+changed: [node1]
+
+TASK [oam_deployment : Install required packages] ******************************
+ok: [node1]
+
+TASK [oam_deployment : Install Python packages] ********************************
+ok: [node1]
+
+TASK [oam_deployment : Clone the repository] ***********************************
+changed: [node1]
+
+TASK [oam_deployment : Add Python warnings to bashrc] **************************
+ok: [node1]
+
+TASK [oam_deployment : Configure /etc/hosts] ***********************************
+included: /home/dharshan/ansible_oam/oam_deployment/tasks/configure_hosts.yml for node1
+
+TASK [oam_deployment : Read the content of /etc/hosts] *************************
+ok: [node1]
+
+TASK [oam_deployment : Extract domain name from second line] *******************
+ok: [node1]
+
+TASK [oam_deployment : Add comment before SMO OAM entries] *********************
+ok: [node1]
+
+TASK [oam_deployment : Add required entries to /etc/hosts] *********************
+ok: [node1] => (item=virtual33.myguest.virtualbox.org)
+ok: [node1] => (item=gateway.virtual33.myguest.virtualbox.org)
+ok: [node1] => (item=identity.virtual33.myguest.virtualbox.org)
+ok: [node1] => (item=messages.virtual33.myguest.virtualbox.org)
+ok: [node1] => (item=odlux.oam.virtual33.myguest.virtualbox.org)
+ok: [node1] => (item=controller.dcn.virtual33.myguest.virtualbox.org)
+ok: [node1] => (item=ves-collector.dcn.virtual33.myguest.virtualbox.org)
+ok: [node1] => (item=minio.virtual33.myguest.virtualbox.org)
+ok: [node1] => (item=redpanda.virtual33.myguest.virtualbox.org)
+ok: [node1] => (item=nrtcp.virtual33.myguest.virtualbox.org)
+
+TASK [oam_deployment : Update environment variables in .env files] *************
+changed: [node1]
+
+TASK [oam_deployment : Deploy the solution] ************************************
+included: /home/dharshan/ansible_oam/oam_deployment/tasks/deploy.yml for node1
+
+TASK [oam_deployment : Install jinja2 Python module] ***************************
+ok: [node1]
+
+TASK [oam_deployment : Run adapt-to-environment script] ************************
+changed: [node1]
+
+TASK [oam_deployment : Run docker-setup.sh] ************************************

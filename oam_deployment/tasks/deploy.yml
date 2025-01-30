@@ -1,0 +1,19 @@
+---
+
+- name: Install jinja2 Python module
+  ansible.builtin.pip:
+    name: jinja2
+    state: present
+    executable: pip3  # Use pip3 for Python 3
+
+- name: Run adapt-to-environment script
+  ansible.builtin.command: 
+    cmd: "python3 adopt_to_environment.py -i {{ ansible_host }} -d {{ domain_name }}"
+    chdir: "{{ repo_dest }}"
+
+- name: Run docker-setup.sh
+  ansible.builtin.command:
+    cmd:  "./docker-setup.sh"
+    chdir: "{{ repo_dest }}"
+
+
