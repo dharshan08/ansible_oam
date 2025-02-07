@@ -21,8 +21,22 @@ The solution was tested on a VM with
 $ cat /etc/os-release | grep PRETTY_NAME
 PRETTY_NAME="Ubuntu 22.04.2 LTS"
 ```
+Please follow the required docker daemon configuration as provided in the following ansible role :
 
+https://github.com/sknrao/ansible-exercises/tree/main/focom/docker/roles/ansible-role-docker
 
+### Docker
+
+```
+$ docker --version
+Docker version 23.0.1, build a5ee5b1
+```
+### Docker Compose
+
+```
+$ docker compose version
+Docker Compose version v2.17.2
+```
 
 Example Playbook
 ----------------
